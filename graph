@@ -1,7 +1,7 @@
 digraph plot {
 	a [label=a fillcolor="#8dd3c7" fixedsize=true height=0.8034 shape=oval style=filled width=1.3]
-	_mulscalar3 [label=_mulscalar3 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
-	_plusscalar3 [label=_plusscalar3 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
-	_mulscalar3 -> a [label="" arrowtail=open dir=back]
-	_plusscalar3 -> _mulscalar3 [label="" arrowtail=open dir=back]
+	_mulscalar4 [label=_mulscalar4 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_plusscalar4 [label=_plusscalar4 fillcolor="#fccde5" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	_mulscalar4 -> a [label="" arrowtail=open dir=back]
+	_plusscalar4 -> _mulscalar4 [label="" arrowtail=open dir=back]
 }
