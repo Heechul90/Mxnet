@@ -1,0 +1,19 @@
+digraph plot {
+	"Previos Output" [label="Previos Output" fillcolor="#8dd3c7" fixedsize=true height=0.8034 shape=oval style=filled width=1.3]
+	conv_Conv1 [label="Convolution
+7x7/2x2, 64" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	bn_Conv1 [label=bn_Conv1 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	relu_Conv1 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	conv_Conv2 [label="Convolution
+7x7/2x2, 32" fillcolor="#fb8072" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	bn_Conv2 [label=bn_Conv2 fillcolor="#bebada" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	relu_Conv2 [label="Activation
+relu" fillcolor="#ffffb3" fixedsize=true height=0.8034 shape=box style=filled width=1.3]
+	conv_Conv1 -> "Previos Output" [label="3x28x28" arrowtail=open dir=back]
+	bn_Conv1 -> conv_Conv1 [label="64x11x11" arrowtail=open dir=back]
+	relu_Conv1 -> bn_Conv1 [label="64x11x11" arrowtail=open dir=back]
+	conv_Conv2 -> relu_Conv1 [label="64x11x11" arrowtail=open dir=back]
+	bn_Conv2 -> conv_Conv2 [label="32x3x3" arrowtail=open dir=back]
+	relu_Conv2 -> bn_Conv2 [label="32x3x3" arrowtail=open dir=back]
+}
