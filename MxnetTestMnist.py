@@ -6,6 +6,7 @@ b = a * 2 + 1
 print(a)
 print(b)
 
+
 ## 그래프 그려보기
 vis = mx.viz.plot_network(symbol = b)
 vis.render('graph')      # 실행 안됨
