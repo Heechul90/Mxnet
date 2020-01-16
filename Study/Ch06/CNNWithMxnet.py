@@ -59,6 +59,9 @@ with alex_net.name_scope():
     alex_net.add(gluon.nn.Dense(4096, activation = 'relu'))
     alex_net.add(gluon.nn.Dense(10))
 
+
+
+
 alex_net.collect_params().initialize(mx.init.Xavier(magnitude = 2.24), ctx = ctx)
 
 trainer = gluon.Trainer(alex_net.collect_params(), 'sgd', {'learning_rate': .001})
@@ -93,7 +96,7 @@ for e in range(epochs):
         trainer.step(data.shape[0])
 
         ############
-        # keep a mobing average of the losses
+        # keep a moving average of the losses
         ############
 
         curr_loss = nd.mean(loss).asscalar()
