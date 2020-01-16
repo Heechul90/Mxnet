@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d260fea-4a18-49a1-b6f3-c9fea49d6593" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Study/Ch06/AlexNetWithMxnet.gluon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Study/Ch06/CNNWithMxnet2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Study/Ch06/AlexNetWithMxnet.gluon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Study/Ch06/AlexNetWithMxnet.gluon.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,22 +14,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Study/Ch06/AlexNetWithMxnet.gluon.py">
+        <entry file="file://$PROJECT_DIR$/DogsAndCats/CNNWithMxnet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Study/Ch06/CNNWithMxnet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="36" />
+            <state relative-caret-position="693">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -63,9 +50,9 @@
         <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/distributed/cpu.py" />
         <option value="$PROJECT_DIR$/Study/Ch06/CNNWithMxnet.py" />
-        <option value="$PROJECT_DIR$/DogsAndCats/CNNWithMxnet.py" />
         <option value="$PROJECT_DIR$/Study/Ch06/CNNWithMxnet2.py" />
         <option value="$PROJECT_DIR$/Study/Ch06/AlexNetWithMxnet.gluon.py" />
+        <option value="$PROJECT_DIR$/DogsAndCats/CNNWithMxnet.py" />
       </list>
     </option>
   </component>
@@ -90,13 +77,7 @@
             <path>
               <item name="Mxnet" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mxnet" type="462c0819:PsiDirectoryNode" />
-              <item name="Study" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Mxnet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Mxnet" type="462c0819:PsiDirectoryNode" />
-              <item name="Study" type="462c0819:PsiDirectoryNode" />
-              <item name="Ch06" type="462c0819:PsiDirectoryNode" />
+              <item name="DogsAndCats" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -159,11 +140,19 @@
       <option name="project" value="LOCAL" />
       <updated>1579152430531</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="studying mxnet">
+      <created>1579167688517</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1579167688517</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -191,16 +180,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Study/Chapter05.py" />
     <entry file="file://$PROJECT_DIR$/Study/Ch06/DeepCNN.py" />
-    <entry file="file://D:/바탕화면/distributed/cpu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://D:/바탕화면/distributed/cpu.py" />
     <entry file="file://$PROJECT_DIR$/distributed/gpu.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -227,16 +207,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DogsAndCats/CNNWithMxnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="79" column="57" selection-start-line="79" selection-start-column="57" selection-end-line="79" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Study/Ch06/CNNWithMxnet2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -247,9 +217,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Study/Ch06/AlexNetWithMxnet.gluon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="18" column="35" lean-forward="true" selection-end-line="125" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Study/Ch06/CNNWithMxnet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
+        <state relative-caret-position="1716">
           <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="36" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
@@ -257,10 +237,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Study/Ch06/AlexNetWithMxnet.gluon.py">
+    <entry file="file://$PROJECT_DIR$/DogsAndCats/CNNWithMxnet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state relative-caret-position="693">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>

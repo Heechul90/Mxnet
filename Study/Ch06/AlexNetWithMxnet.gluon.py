@@ -15,13 +15,13 @@ def transformer(data, label):
     data = data.astype(np.float32)
     return data, label
 
-batch_size = 128
+batch_size = 3
 train_data = gluon.data.DataLoader(
-    gluon.data.vision.FashionMNIST('./data', train = True, transform = transformer),
+    gluon.data.vision.CIFAR10('./data', train = True, transform = transformer),
     batch_size = batch_size, shuffle = False, last_batch = 'discard')
 
 test_data = gluon.data.DataLoader(
-    gluon.data.vision.FashionMNIST('./data', train = False, transform = transformer),
+    gluon.data.vision.CIFAR10('./data', train = False, transform = transformer),
     batch_size = batch_size, shuffle = True, last_batch = 'discard')
 
 
@@ -99,7 +99,7 @@ def evaluate_accuracy(data_iterator, net):
 #######
 
 epochs = 1
-smoothing_constant = .01
+smoothing_constant = 0.01
 
 for e in range(epochs):
     for i, (d, l) in enumerate(train_data):
