@@ -7,15 +7,13 @@ mx.random.seed(1)
 
 ctx = mx.cpu()
 
-
-
 def transformer(data, label):
     data = mx.image.imresize(data, 224, 224)
     data = mx.nd.transpose(data, (2, 0, 1))
     data = data.astype(np.float32)
     return data, label
 
-batch_size = 3
+batch_size = 64
 train_data = gluon.data.DataLoader(
     gluon.data.vision.CIFAR10('./data', train = True, transform = transformer),
     batch_size = batch_size, shuffle = False, last_batch = 'discard')
@@ -33,7 +31,6 @@ print(d.shape, l.shape)
 
 
 net = gluon.nn.Sequential()
-
         # 은닉층1 (채널=96, 커널=11, 패딩=1, 스트라이드=4, 활성화함수=relu)
         # maxpooling(사이즈=3, 스트라이드2)
         # 입력사이즈 (224, 224), 출력사이즈 (27, 27)
@@ -78,10 +75,10 @@ net.add(gluon.nn.Conv2D(96, kernel_size=11, padding=1, strides=4, activation='re
 
 
 
-net.collect_params().initialize(mx.init.Xavier(magnitude = 2.24), ctx = ctx)
+net.collect_params().initialize(mx.init.Xavier(magnitude = 0), ctx = ctx)
 
-trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': .01})
-
+trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': .11})
+# 오차 함수
 softmax_cross_entropy = gluon.loss.SoftmaxCrossEntropyLoss()
 
 def evaluate_accuracy(data_iterator, net):
