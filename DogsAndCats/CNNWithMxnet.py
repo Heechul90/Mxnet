@@ -7,20 +7,20 @@ mx.random.seed(1)
 
 ctx = mx.cpu()
 
+
+
 def transformer(data, label):
     data = mx.image.imresize(data, 224, 224)
     data = mx.nd.transpose(data, (2, 0, 1))
     data = data.astype(np.float32)
     return data, label
 
-batch_size = 64
-train_data = gluon.data.DataLoader(
-    gluon.data.vision.CIFAR10('./data', train = True, transform = transformer),
+batch_size = 3
+train_data = gluon.data.DataLoader('dataset/train',
     batch_size = batch_size, shuffle = False, last_batch = 'discard')
 
-test_data = gluon.data.DataLoader(
-    gluon.data.vision.CIFAR10('./data', train = False, transform = transformer),
-    batch_size = batch_size, shuffle = True, last_batch = 'discard')
+test_data = gluon.data.DataLoader('dataset/test1',
+    batch_size = batch_size, shuffle = False, last_batch = 'discard')
 
 
 for d, l in train_data:
@@ -31,56 +31,55 @@ print(d.shape, l.shape)
 
 
 net = gluon.nn.Sequential()
+
         # 은닉층1 (채널=96, 커널=11, 패딩=1, 스트라이드=4, 활성화함수=relu)
         # maxpooling(사이즈=3, 스트라이드2)
         # 입력사이즈 (224, 224), 출력사이즈 (27, 27)
-net.add(gluon.nn.Conv2D(96, kernel_size=11, padding=1, strides=4, activation='relu'))
-net.add(gluon.nn.MaxPool2D(pool_size=3, strides=2))
+net.add(gluon.nn.Conv2D(96, kernel_size=11, padding=1, strides=4, activation='relu'),
+        gluon.nn.MaxPool2D(pool_size=3, strides=2),
 
         # 은닉층2 (채널=256, 커널=5, 패딩=2, 스트라이드=1, 활성화함수=relu)
         # maxpooling(사이즈=3, 스트라이드=2)
         # 입력사이즈(27, 27), 출력사이즈(13, 13)
-net.add(gluon.nn.Conv2D(256, kernel_size=5, padding=2, strides=1, activation='relu'))
-net.add(gluon.nn.MaxPool2D(pool_size=3, strides=2))
+        gluon.nn.Conv2D(256, kernel_size=5, padding=2, strides=1, activation='relu'),
+        gluon.nn.MaxPool2D(pool_size=3, strides=2),
 
         # 은닉층3 (채널=384, 커널=3, 패딩=1, 스트라이드=1, 활성화함수=relu)
         # 입력사이즈(13, 13), 출력사이즈(13, 13)
-net.add(gluon.nn.Conv2D(384, kernel_size=3, padding=1, strides=1, activation='relu'))
+        gluon.nn.Conv2D(384, kernel_size=3, padding=1, strides=1, activation='relu'),
 
         # 은닉층4 (채널=384, 커널=3, 패딩=1, 스트라이드=1, 활성화함수=relu)
         # 입력사이즈(13, 13), 출력사이즈(13, 13)
-net.add(gluon.nn.Conv2D(384, kernel_size=3, padding=1, strides=1, activation='relu'))
+        gluon.nn.Conv2D(384, kernel_size=3, padding=1, strides=1, activation='relu'),
 
         # 은닉층5 (채널=256, 커널=3, 패딩=1, 스트라이드=1, 활성화함수=relu)
         # maxpooling(사이즈=3, 스트라이드=2)
         # 입력사이즈(13, 13), 출력사이즈(6, 6)
-net.add(gluon.nn.Conv2D(256, kernel_size=3, padding=1, activation='relu'))
-net.add(gluon.nn.MaxPool2D(pool_size=3, strides=2))
+        gluon.nn.Conv2D(256, kernel_size=3, padding=1, activation='relu'),
+        gluon.nn.MaxPool2D(pool_size=3, strides=2),
 
         # 1차원 배열로
-gluon.nn.Flatten()
+        gluon.nn.Flatten(),
 
         # 은닉층6 (채널=4096, 활성화함수=relu)
         # dropout(0.5)
         # 입력사이즈(6, 6), 출력사이즈(1, 1)
-net.add(gluon.nn.Dense(4096, activation="relu"), gluon.nn.Dropout(0.5))
+        gluon.nn.Dense(4096, activation="relu"), gluon.nn.Dropout(0.5),
 
         # 은닉층7 (채널=4096, 활성화함수=relu)
         # dropout(0.5)
         # 입력사이즈(1, 1), 출력사이즈(1, 1)
-net.add(gluon.nn.Dense(4096, activation="relu"), gluon.nn.Dropout(0.5),)
+        gluon.nn.Dense(4096, activation="relu"), gluon.nn.Dropout(0.5),
         # Output layer. Since we are using Fashion-MNIST, the number of
         # classes is 10, instead of 1000 as in the paper
-net.add(gluon.nn.Dense(10))
+        gluon.nn.Dense(10))
 
 
 
+net.collect_params().initialize(mx.init.Xavier(magnitude = 2.24), ctx = ctx)
 
+trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': .01})
 
-net.collect_params().initialize(mx.init.Xavier(magnitude = 0), ctx = ctx)
-
-trainer = gluon.Trainer(net.collect_params(), 'sgd', {'learning_rate': .11})
-# 오차 함수
 softmax_cross_entropy = gluon.loss.SoftmaxCrossEntropyLoss()
 
 def evaluate_accuracy(data_iterator, net):

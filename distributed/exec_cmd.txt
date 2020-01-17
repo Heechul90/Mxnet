@@ -1,0 +1,2 @@
+launch.py -H hostfile -n 3 --launcher mpi python cpu.py
+launch.py -H hostfile -n 3 --launcher mpi python gpu.py
