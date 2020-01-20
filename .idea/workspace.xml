@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8d260fea-4a18-49a1-b6f3-c9fea49d6593" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DogsAndCats/CNNWithMxnet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MxnetImage/.ipynb_checkpoints/OpenCV-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MxnetImage/.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MxnetImage/OpenCV.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MxnetImage/Untitled.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MxnetImage/data/heechul.jfif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MxnetImage/data/heechul.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MxnetImage/data/heechul22.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MxnetImage/target.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV/.ipynb_checkpoints/OpenCV-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV/OpenCV.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV/OpenCV.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV/data/heechul.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV/data/snowman.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/distributed/cpu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/distributed/exec_cmd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/distributed/gpu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/distributed/hostfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Study/Ch06/AlexNetWithMxnet.gluon.py" beforeDir="false" afterPath="$PROJECT_DIR$/Study/Ch06/AlexNetWithMxnet.gluon.py" afterDir="false" />
-    </list>
+    <list default="true" id="8d260fea-4a18-49a1-b6f3-c9fea49d6593" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +107,7 @@
     <option name="width" value="974" />
     <option name="height" value="1041" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
