@@ -4,6 +4,7 @@ from mxnet import nd, autograd
 from mxnet import gluon
 import numpy as np
 mx.random.seed(1)
+from glob import glob
 
 
 # ctx = mx.gpu()
@@ -29,9 +30,10 @@ test_data = gluon.data.DataLoader(
 for d, l in train_data:
     break
 
+
 print(d.shape, l.shape)
 
-d.dtype
+
 
 alex_net = gluon.nn.Sequential()
 with alex_net.name_scope():
